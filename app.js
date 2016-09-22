@@ -422,7 +422,7 @@ function getRandCodeLine(){
     "<?php echo '<p>Hello CodeHBS</p>'; ?> "
   ];
 
-  return codeOptions[(int)(Math.random()*codeOptions.length)];
+  return codeOptions[Math.floor((Math.random()*codeOptions.length))];
 }
 
 /*
