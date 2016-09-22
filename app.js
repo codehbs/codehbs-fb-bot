@@ -255,6 +255,8 @@ function receivedMessage(event) {
     // keywords and send back the corresponding example. Otherwise, just echo
     // the text we received.
     switch (messageText) {
+      case 'code':
+        sendCodeMessage(senderID);
       case 'image':
         sendImageMessage(senderID);
         break;
@@ -402,6 +404,25 @@ function receivedAccountLink(event) {
 
   console.log("Received account link event with for user %d with status %s " +
     "and auth code %s ", senderID, status, authCode);
+}
+
+/*
+ * Send a random code message using Send API
+ */
+function sendCodeMessage(recipientId) {
+  var randomLineOfCode = getRandCodeLine();
+  sendTextMessage(recipientId, randomLineOfCode);
+}
+
+function getRandCodeLine(){
+  var codeOptions = [
+    "public static void main(String[] args){\nSystem.out.println('Hi, I'm CodeHBS.');\n}",
+    "<a href='facebook.com/codehbs'>CodeHBS link</a>",
+    "function sayHelloWorld(){ \ndocument.write('Hello CodeHBS!');\n}",
+    "<?php echo '<p>Hello CodeHBS</p>'; ?> "
+  ];
+
+  return codeOptions[(int)(Math.random()*codeOptions.length)];
 }
 
 /*
