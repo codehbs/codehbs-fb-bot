@@ -1,6 +1,6 @@
-# Messenger Platform Sample -- node.js
+# CodeHBS facebook messenger bot -- node.js
 
-This project is an example server for Messenger Platform built in Node.js. With this app, you can send it messages and it will echo them back to you. You can also see examples of the different types of Structured Messages. 
+This project defines the server (webhook) that handles messages sent to the CodeHBS facebook messenger bot and responds to them. This was built on top of Facebook's template server app provided [here](https://github.com/fbsamples/messenger-platform-samples). 
 
 It contains the following functionality:
 
