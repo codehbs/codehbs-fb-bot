@@ -125,8 +125,13 @@ app.post('/webhook', function (req, res) {
  * 
  */
 app.get('/authorize', function(req, res) {
+<<<<<<< HEAD
   var accountLinkingToken = req.query.account_linking_token;
   var redirectURI = req.query.redirect_uri;
+=======
+  var accountLinkingToken = req.query['account_linking_token'];
+  var redirectURI = req.query['redirect_uri'];
+>>>>>>> 8119ca27c88041ba8c0acb0117aaee2d732a87ed
 
   // Authorization Code should be generated per user by the developer. This will 
   // be passed to the Account Linking callback.
@@ -255,6 +260,13 @@ function receivedMessage(event) {
     // keywords and send back the corresponding example. Otherwise, just echo
     // the text we received.
     switch (messageText) {
+<<<<<<< HEAD
+=======
+      case 'code':
+        sendCodeMessage(senderID);
+        break;
+        
+>>>>>>> 8119ca27c88041ba8c0acb0117aaee2d732a87ed
       case 'image':
         sendImageMessage(senderID);
         break;
@@ -405,6 +417,28 @@ function receivedAccountLink(event) {
 }
 
 /*
+<<<<<<< HEAD
+=======
+ * Send a random code message using Send API
+ */
+function sendCodeMessage(recipientId) {
+  var randomLineOfCode = getRandCodeLine();
+  sendTextMessage(recipientId, randomLineOfCode);
+}
+
+function getRandCodeLine(){
+  var codeOptions = [
+    "public static void main(String[] args){\nSystem.out.println('Hi, I'm CodeHBS.');\n}",
+    "<a href='facebook.com/codehbs'>CodeHBS link</a>",
+    "function sayHelloWorld(){ \ndocument.write('Hello CodeHBS!');\n}",
+    "<?php echo '<p>Hello CodeHBS</p>'; ?> "
+  ];
+
+  return codeOptions[Math.floor((Math.random()*codeOptions.length))];
+}
+
+/*
+>>>>>>> 8119ca27c88041ba8c0acb0117aaee2d732a87ed
  * Send an image using the Send API.
  *
  */
@@ -493,7 +527,11 @@ function sendVideoMessage(recipientId) {
 }
 
 /*
+<<<<<<< HEAD
  * Send a file using the Send API.
+=======
+ * Send a video using the Send API.
+>>>>>>> 8119ca27c88041ba8c0acb0117aaee2d732a87ed
  *
  */
 function sendFileMessage(recipientId) {
@@ -554,7 +592,11 @@ function sendButtonMessage(recipientId) {
           }, {
             type: "postback",
             title: "Trigger Postback",
+<<<<<<< HEAD
             payload: "DEVELOPER_DEFINED_PAYLOAD"
+=======
+            payload: "DEVELOPED_DEFINED_PAYLOAD"
+>>>>>>> 8119ca27c88041ba8c0acb0117aaee2d732a87ed
           }, {
             type: "phone_number",
             title: "Call Phone Number",
@@ -696,6 +738,10 @@ function sendQuickReply(recipientId) {
     },
     message: {
       text: "What's your favorite movie genre?",
+<<<<<<< HEAD
+=======
+      metadata: "DEVELOPER_DEFINED_METADATA",
+>>>>>>> 8119ca27c88041ba8c0acb0117aaee2d732a87ed
       quick_replies: [
         {
           "content_type":"text",
@@ -822,7 +868,11 @@ function callSendAPI(messageData) {
         recipientId);
       }
     } else {
+<<<<<<< HEAD
       console.error("Failed calling Send API", response.statusCode, response.statusMessage, body.error);
+=======
+      console.error(response.error);
+>>>>>>> 8119ca27c88041ba8c0acb0117aaee2d732a87ed
     }
   });  
 }

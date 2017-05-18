@@ -1,7 +1,13 @@
 {
+<<<<<<< HEAD
   "name": "language-ar-bot",
   "version": "1.0.0",
   "description": "Receive images and send back images with identified objects in a foreign language",
+=======
+  "name": "messenger-get-started",
+  "version": "1.0.0",
+  "description": "Get started example for Messenger Platform",
+>>>>>>> 8119ca27c88041ba8c0acb0117aaee2d732a87ed
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -12,7 +18,11 @@
     "type": "git",
     "url": "https://github.com/fbsamples/messenger-platform-samples.git"
   },
+<<<<<<< HEAD
   "author": "Anshul Bhagi",
+=======
+  "author": "Facebook",
+>>>>>>> 8119ca27c88041ba8c0acb0117aaee2d732a87ed
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.0",
